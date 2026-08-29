@@ -1,0 +1,38 @@
+{
+  "name": "genpark-unified-memory-moe-expert-offload-runtime-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Unified memory Mixture-of-Experts runtime offloading inactive expert weights to RAM with zero-overhead PCIe prefetching.",
+  "author": "genpark",
+  "category": "moe-runtime",
+  "tags": [
+    "ktransformers",
+    "deepspeed",
+    "moe-offloading",
+    "pcie-prefetch",
+    "unified-memory"
+  ],
+  "inputs": {
+    "moe_model_id": {
+      "type": "string"
+    },
+    "system_ram_gb": {
+      "type": "integer"
+    },
+    "gpu_vram_gb": {
+      "type": "integer"
+    }
+  },
+  "outputs": {
+    "offload_session_id": {
+      "type": "string"
+    },
+    "active_routed_experts_count": {
+      "type": "integer"
+    },
+    "inference_tok_per_sec": {
+      "type": "number"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
